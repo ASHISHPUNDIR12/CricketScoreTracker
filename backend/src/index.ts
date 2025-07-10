@@ -1,9 +1,13 @@
 import { Hono } from 'hono'
+import { UserRouter } from './routes/user'
 
-const app = new Hono()
+type Bindings = {
+  DATABASE_URL : String;
+  JWT_SECRET : String
+}
+const app = new Hono<{
+  Bindings : Bindings
+}>()
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
-
+app.route("/api/v1/user" , UserRouter);
 export default app
