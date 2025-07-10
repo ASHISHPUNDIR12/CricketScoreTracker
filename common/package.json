@@ -1,0 +1,16 @@
+{
+  "name": "@ashu777/cricket-common",
+  "version": "1.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts" ,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "zod": "^4.0.2"
+  }
+}
