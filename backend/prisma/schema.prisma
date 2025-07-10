@@ -15,8 +15,97 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  name String
-  password String
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
+  password  String
+  matches   Match[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
+
+model Match {
+  id            Int          @id @default(autoincrement())
+  userId        Int
+  creator       User         @relation(fields: [userId], references: [id])
+  teamA         String
+  teamB         String
+  playerPerTeam Int
+  venue         String
+  overs         Int
+  ballType      String
+  players       Player[]
+  balls         Ball[]
+  commentary    Commentary[]
+  winnerTeam    String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+enum Team {
+  A
+  B
+}
+
+model Player {
+  id         Int      @id @default(autoincrement())
+  matchId    Int
+  match      Match    @relation(fields: [matchId], references: [id])
+  name       String
+  mobile     String
+  team       Team
+  battedBalls Ball[]  @relation("BatsmanBalls")
+  bowledBalls Ball[]  @relation("BowlerBalls")
+}
+model Ball {
+  id         Int         @id @default(autoincrement())
+  matchId    Int
+  match      Match       @relation(fields: [matchId], references: [id])
+  over       Int
+  ball       Int
+  batsmanId  Int
+  batsman    Player      @relation("BatsmanBalls", fields: [batsmanId], references: [id])
+  bowlerId   Int
+  bowler     Player      @relation("BowlerBalls", fields: [bowlerId], references: [id])
+  runs       Int
+  extras     Int?
+  wicket     Boolean?
+  commentary  Commentary[]
+}
+
+model Commentary {
+  id         Int      @id @default(autoincrement())
+  matchId    Int
+  match      Match    @relation(fields: [matchId], references: [id])
+  ballId     Int?     
+  ball       Ball?    @relation( fields: [ballId], references: [id])
+  text       String
+  createdAt  DateTime @default(now())
+}
+
+
+// Player stats
+
+// Do you want to store per-player stats (runs, wickets, etc.) or will you always compute these on the fly from Ball data?
+// Extras & Wickets details
+
+// Do you want to store more detail for extras (wide, no-ball, leg byes, etc.) or wicket type (caught, bowled, etc.)?
+// You can add enums or additional fields for these if needed.
+// Match status
+
+// Add a field like status (e.g. "scheduled", "in progress", "completed") to the Match model for better management.
+// Timestamps
+
+// You already have createdAt/updatedAt on most models, which is good!
+// Indexes for performance
+
+// Use @@index on frequently queried fields if your app grows.
+// User roles/admin
+
+// If you want to support multiple user roles (admin, scorer, viewer, etc.), add a role field to User.
+// API tokens or sessions
+
+// For advanced auth/session management, you might add a Session or Token model, but not required for basic apps.
+// Data validation
+
+// Prisma handles this at the DB level, but consider adding validation in your app logic as well.
