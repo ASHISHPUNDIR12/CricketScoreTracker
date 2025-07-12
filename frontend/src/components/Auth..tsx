@@ -53,7 +53,29 @@ const Auth = ({ types }: { types: "signup" | "signin" }) => {
     <div className="">
       <Navbar />
       <div className="mt-10 sm:w-90 sm:m-auto sm:mt-18 ">
-        <div className="border border-red-500  flex flex-col justify-center items-center  mx-5 py-10  ">
+        <div className=" pb-5 pl-5">
+          <a
+            href="/"
+            className="inline-flex items-center border border-red-300 px-3 py-1.5 rounded-md text-red-500 hover:bg-indigo-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 16l-4-4m0 0l4-4m-4 4h18"
+              ></path>
+            </svg>
+            <span className="ml-1 font-bold text-lg">Back</span>
+          </a>
+        </div>
+        <div className="border border-red-500  flex flex-col justify-center items-center  mx-5 py-10   ">
           <div className="text-2xl mb-2 text-white font-extralight border px-2 py-1 bg-[#e20001] ">
             {types === "signin" ? "Welcome back" : "Create an account "}
           </div>
@@ -122,7 +144,6 @@ const Auth = ({ types }: { types: "signup" | "signin" }) => {
                     d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
                   />
                 </svg>
-                
               </>
             ) : types === "signup" ? (
               "Register"
@@ -152,4 +173,3 @@ const Auth = ({ types }: { types: "signup" | "signin" }) => {
 };
 
 export default Auth;
-    

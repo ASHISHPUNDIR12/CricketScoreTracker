@@ -8,12 +8,11 @@ const Matches = () => {
             <Navbar/>
         </div>
         <div>
-           <ScoreCard/> 
-           <ScoreCard/> 
-           <ScoreCard/> 
-           <ScoreCard/> 
-           <ScoreCard/> 
-           <ScoreCard/> 
+           <ScoreCard id="1"/> 
+           <ScoreCard id="2"/> 
+           <ScoreCard id="3"/> 
+           <ScoreCard id="4"/> 
+           <ScoreCard id="5"/> 
         </div>
     </div>
   )

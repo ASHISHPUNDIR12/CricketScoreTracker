@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 
-const ScoreCard = () => {
- 
+const ScoreCard = ({ id }: { id: string }) => {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate(`/match/${id}`);
+  }
   return (
-
     <div>
       <div>
-       
         <div
+          onClick={handleClick}
           className="border border-red-800 bg-orange-100 rounded-2xl m-5 cursor-pointer  "
         >
           <p className="p-3 font-extralight">10 July 2025</p>
@@ -29,26 +32,26 @@ const ScoreCard = () => {
   );
 };
 
-const PopupCard = ({
-  onClose,
-  children,
-}: {
-  onClose: () => void;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-      <div className="bg-white rounded-lg p-6 shadow-xl relative min-w-[300px] max-w-md">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-gray-600 hover:text-red-500"
-        >
-          ✕
-        </button>
-        {children}
-      </div>
-    </div>
-  );
-};
+// const PopupCard = ({
+//   onClose,
+//   children,
+// }: {
+//   onClose: () => void;
+//   children: React.ReactNode;
+// }) => {
+//   return (
+//     <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
+//       <div className="bg-white rounded-lg p-6 shadow-xl relative min-w-[300px] max-w-md">
+//         <button
+//           onClick={onClose}
+//           className="absolute top-2 right-2 text-gray-600 hover:text-red-500"
+//         >
+//           ✕
+//         </button>
+//         {children}
+//       </div>
+//     </div>
+//   );
+// };
 
 export default ScoreCard;
