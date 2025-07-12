@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen overflow-x-hidden ">
-      <Navbar />
+      <Navbar path="" title1="home" title1Path="" title2="how to use" title2Path=""  title3="signup" title3Path="signup" createMatch="Create match" />
 
       <div className="sm:flex sm:justify-between sm:mt-10 sm:mx-4 lg:mx-30">
         <div className="left sm:border sm:p-8 lg:p-20 flex-1">

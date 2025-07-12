@@ -4,6 +4,8 @@ import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import Matches from "./pages/Matches"
 import MatchDetailPage from "./pages/MatchDetailPage"
+import FinalHomePage from "./pages/FinalHomePage"
+import CreateMatches from "./pages/CreateMatches"
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/signin" element={<Signin/>} />
         <Route path="/matches" element={<Matches/>} />
         <Route path="/match/:id" element={<MatchDetailPage/>} />
+        <Route path="/finalhome" element={<FinalHomePage/>} />
+        <Route path="/creatematch" element={<CreateMatches/>} />
       </Routes>
     </BrowserRouter>
     </>
