@@ -36,7 +36,7 @@ const Auth = ({ types }: { types: "signup" | "signin" }) => {
       );
       const jwt = response.data.token;
       localStorage.setItem("token", jwt);
-      navigate("/matches");
+      navigate("/finalhome");
       setLoader(false);
     } catch (e: any) {
       console.log(e);
@@ -51,7 +51,7 @@ const Auth = ({ types }: { types: "signup" | "signin" }) => {
   };
   return (
     <div className="">
-      <Navbar />
+      <Navbar path="" title1="home" title1Path="" title2="How to use" title2Path="" title3="login" title3Path="signin"  />
       <div className="mt-10 sm:w-90 sm:m-auto sm:mt-18 ">
         <div className=" pb-5 pl-5">
           <a
