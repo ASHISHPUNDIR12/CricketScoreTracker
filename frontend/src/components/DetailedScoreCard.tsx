@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Info from "./Info";
 import Commentry from "./Commentry";
 import Scoreboard from "./Scoreboard";
+import { useNavigate } from "react-router-dom";
 
 const DetailedScoreCard = ({ matchId }: { matchId: string | undefined }) => {
   const [currentState, setCurrentState] = useState<String>("info");
+  const navigate = useNavigate()
   return (
     <div>
-      <div className="border mx-3 mt-5  ">
+      <div className="bg-red-600 mt-5 w-20 ml-3 mb-3 p-2 text-center text-white rounded  " >
+        <button onClick={()=>{
+          navigate("/matches")
+        }} >Back</button>
+      </div>
+      <div className="border mx-3 bg-green-100 max-h-[50%]   ">
         <div className="flex justify-between bg-gradient-to-r from-[#e53935] to-[#b71c1c] text-white p-4  shadow-md m-auto mt-3  border w-[70%] py-2 px-5  ">
           <h1>Team1</h1>
           <p>vs</p>
@@ -48,7 +54,7 @@ const DetailedScoreCard = ({ matchId }: { matchId: string | undefined }) => {
             </li>
           </ul>
         </div>
-        <div className="text-center border mx-3 mb-3  ">
+        <div className=" border  mx-3 mb-3  ">
           {currentState === "info" && <Info />}
           {currentState === "commentry" && <Commentry />}
           {currentState === "scoreboard" && <Scoreboard />}
