@@ -1,11 +1,11 @@
+import CreateMatch from "../components/CreateMatch";
+
 const CreateMatches = () => {
   return (
     <div>
-        <div>
-            create matches 
-        </div>
+      <CreateMatch />
     </div>
-  )
-}
+  );
+};
 
-export default CreateMatches
+export default CreateMatches;
