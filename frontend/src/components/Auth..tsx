@@ -51,7 +51,15 @@ const Auth = ({ types }: { types: "signup" | "signin" }) => {
   };
   return (
     <div className="">
-      <Navbar path="" title1="home" title1Path="" title2="How to use" title2Path="" title3="login" title3Path="SignupInput"  />
+      <Navbar
+        path=""
+        title1="home"
+        title1Path=""
+        title2="How to use"
+        title2Path=""
+        title3="login"
+        title3Path="SignupInput"
+      />
       <div className="mt-10 sm:w-90 sm:m-auto sm:mt-18 ">
         <div className=" pb-5 pl-5">
           <a
