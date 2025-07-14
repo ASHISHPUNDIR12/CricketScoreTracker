@@ -6,6 +6,7 @@ import Matches from "./pages/Matches"
 import MatchDetailPage from "./pages/MatchDetailPage"
 import FinalHomePage from "./pages/FinalHomePage"
 import CreateMatches from "./pages/CreateMatches"
+import AddPlayers from "./pages/AddPlayers"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/match/:id" element={<MatchDetailPage/>} />
         <Route path="/finalhome" element={<FinalHomePage/>} />
         <Route path="/creatematch" element={<CreateMatches/>} />
+        <Route path="/addplayers" element={<AddPlayers/>} />
       </Routes>
     </BrowserRouter>
     </>

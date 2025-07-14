@@ -1,80 +1,107 @@
-const CreateMatch = () => {
-  return (
-    <div>
-      <div className="">
-        <h1 className="text-center text-2xl mt-5  ">Create match </h1>
-        <div className="mt-5 flex justify-around items-center">
-          <span className="border bg-red-600 px-12 py-10 text-2xl rounded-full">
+  const CreateMatch = () => {
+    return (
+      <div className="min-h-screen bg-white px-4 py-4 text-sm sm:text-base">
+        <h1 className="text-center text-2xl font-semibold text-red-700 mb-6">
+          Create Match
+        </h1>
+
+        {/* Team Display */}
+        <div className="flex justify-around items-center mb-6">
+          <span className="bg-red-600 text-white px-10 py-8 text-xl rounded-full shadow-md">
             T
           </span>
-          <span className="text-2xl">vs</span>
-          <span className="border px-12 bg-green-600 py-10 text-2xl rounded-full">
+          <span className="text-xl font-semibold">vs</span>
+          <span className="bg-green-600 text-white px-10 py-8 text-xl rounded-full shadow-md">
             T
           </span>
         </div>
-        <form action="submit">
-          <div className="flex gap-21  m-7 mt-7">
+
+        <form className="space-y-6">
+          {/* Team Names */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <input
-              className="w-30 border-b-2 text-center font-extralight outline-none "
+              className="flex-1 border-b-2 text-center py-1 font-light outline-none"
               type="text"
-              placeholder="Team1 name "
+              placeholder="Team 1 Name"
             />
             <input
-              className="w-30 border-b-2 text-center font-extralight outline-none"
+              className="flex-1 border-b-2 text-center py-1 font-light outline-none"
               type="text"
-              placeholder="Team1 name "
+              placeholder="Team 2 Name"
             />
           </div>
-          <div className="border mx-5 pt-7  ">
-            <div className=" p-2 pl-8    ">
-              <label className="pr-15">over</label>
+
+          {/* Match Details */}
+          <div className="border rounded-xl p-5 space-y-5 shadow-sm">
+            {/* Overs */}
+            <div className="flex items-center gap-4">
+              <label className="w-24">Overs</label>
               <input
-                className="w-12 border text-center rounded border-slate-400 "
+                className="w-16 border text-center rounded border-slate-400 py-1"
                 type="number"
                 placeholder="20"
               />
             </div>
-            <div className="flex  p-2 justify-around ">
-              <label className="pl-4">Ground</label>
+
+            {/* Ground */}
+            <div className="flex items-center gap-4">
+              <label className="w-24">Ground</label>
               <input
-                className="border text-center rounded border-slate-400"
+                className="flex-1 border text-center rounded border-slate-400 py-1"
                 type="text"
                 placeholder="Enter Ground Name"
               />
             </div>
-            <div className="flex  p-2 gap-6 pl-7">
-              <label>Ball type</label>
+
+            {/* Ball Type */}
+            <div className="flex items-center gap-4">
+              <label className="w-24">Ball Type</label>
               <select
                 name="ballType"
-                className="bg-[#ffebeb] text-[#b71c1c] border border-[#e53935] rounded-lg px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e53935]"
+                className="flex-1 bg-[#ffebeb] text-[#b71c1c] border border-[#e53935] rounded px-3 py-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e53935]"
               >
-                <option className="text-gray-500">Ball Type</option>
+                <option>Choose</option>
                 <option value="tennis">Tennis</option>
                 <option value="flash">Flash</option>
                 <option value="leather">Leather</option>
               </select>
             </div>
-            <div className=" p-2 pl-7 ">
-              <label className="pr-2">Player Count per team </label>
+
+            {/* Player Count */}
+            <div className="flex items-center gap-4">
+              <label className="w-40 text-sm">Players Per Team</label>
               <input
-                className="w-12 border text-center rounded border-slate-400 "
-                type="text"
-                placeholder=""
+                className="w-16 border text-center rounded border-slate-400 py-1"
+                type="number"
+                placeholder="11"
               />
             </div>
-            <div className="text-center my-5   ">
-              <button className="border rounded bg-green-500 text-white  px-5 py-2 ">
-                confirm
+
+            {/* Confirm Button */}
+            <div className="text-center mt-4">
+              <button
+                type="button"
+                onClick={() => alert("Confirm")}
+                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
+              >
+                Confirm
               </button>
             </div>
           </div>
-          <div className="  bg-red-700 text-white text-center mt-10 rounded-2xl border w-45 mx-auto py-5">
-            <button>Add Players Name</button>
+
+          {/* Add Player Button */}
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => alert("Add player")}
+              className="bg-red-700 hover:bg-red-800 text-white  w-full py-3 rounded-xl shadow"
+            >
+              Add Players Name
+            </button>
           </div>
         </form>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default CreateMatch;
+  export default CreateMatch;
