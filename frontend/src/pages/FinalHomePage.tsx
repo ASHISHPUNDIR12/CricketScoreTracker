@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ScoreCard from "../components/ScoreCard";
 
@@ -14,9 +14,14 @@ const FinalHomePage = () => {
         title2Path="matches"
         title3="Stats"
       />
-      <button onClick={()=>{
-          navigate("/creatematch")
-      }} className="border py-3 px-4 bg-red-700 text-white rounded  bottom-8 shadow-lg shadow-red-500/50  left-28 fixed">Create matches </button>
+      <button
+        onClick={() => {
+          navigate("/creatematch");
+        }}
+        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 border py-3 px-4 bg-red-700 text-white rounded shadow-lg shadow-red-500/50"
+      >
+        Create matches{" "}
+      </button>
       <div>
         <ScoreCard id="1" />
         <ScoreCard id="2" />
