@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
   const CreateMatch = () => {
+    const navigate = useNavigate()
     return (
       <div className="min-h-screen bg-white px-4 py-4 text-sm sm:text-base">
         <h1 className="text-center text-2xl font-semibold text-red-700 mb-6">
@@ -93,7 +96,9 @@
           <div className="text-center">
             <button
               type="button"
-              onClick={() => alert("Add player")}
+              onClick={() => {
+                navigate("/addplayers")
+              }}
               className="bg-red-700 hover:bg-red-800 text-white  w-full py-3 rounded-xl shadow"
             >
               Add Players Name
