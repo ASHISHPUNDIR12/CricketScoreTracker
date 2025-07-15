@@ -7,6 +7,7 @@ import MatchDetailPage from "./pages/MatchDetailPage"
 import FinalHomePage from "./pages/FinalHomePage"
 import CreateMatches from "./pages/CreateMatches"
 import AddPlayers from "./pages/AddPlayers"
+import TossPage from "./pages/TossPage"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/finalhome" element={<FinalHomePage/>} />
         <Route path="/creatematch" element={<CreateMatches/>} />
         <Route path="/addplayers" element={<AddPlayers/>} />
+        <Route path="/toss" element={<TossPage/>} />
       </Routes>
     </BrowserRouter>
     </>
